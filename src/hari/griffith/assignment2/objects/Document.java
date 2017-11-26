@@ -1,66 +1,42 @@
 package hari.griffith.assignment2.objects;
 
-import java.util.HashMap;
-
 public class Document {
-    private int documentNumber;
-    private String documentTitle;
-    private int totalNumberOfWords;
-    private int tf;
+    private DocumentProperties documentProperties;
+    private float normalisedTermFrequency;
+    private float tfIdf;
 
-    public String getDocumentTitle() {
-        return documentTitle;
+    public float getTfIdf() {
+        return tfIdf;
     }
 
-    public int getTf() {
-        return tf;
+    public void setTfIdf(float tfIdf) {
+        this.tfIdf = tfIdf;
     }
 
-    public void setTf(int tf) {
-        this.tf = tf;
+    public float getNormalisedTermFrequency() {
+        return normalisedTermFrequency;
     }
 
-    public int getTotalNumberOfWords() {
-        return totalNumberOfWords;
+    public DocumentProperties getDocumentProperties() {
+        return documentProperties;
     }
 
-    public void setTotalNumberOfWords(int totalNumberOfWords) {
-        this.totalNumberOfWords = totalNumberOfWords;
+    public void setDocumentProperties(DocumentProperties documentProperties) {
+        this.documentProperties = documentProperties;
     }
 
-    public void setDocumentNumber(int documentNumber) {
-        this.documentNumber = documentNumber;
+    public void setNormalisedTermFrequency(float normalisedTermFrequency) {
+        this.normalisedTermFrequency = normalisedTermFrequency;
+
     }
 
-    public void setDocumentTitle(String documentTitle) {
-        this.documentTitle = documentTitle;
-    }
-
-
-    public int getDocumentNumber() {
-        return documentNumber;
-    }
-
-
-
-
-    /*@Override
+    @Override
     public String toString() {
-
-        StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Document title is :");
-            stringBuilder.append(documentTitle);
-            stringBuilder.append(" ");
-            stringBuilder.append("Document number  is :");
-            stringBuilder.append(documentNumber);
-            wordCountMap.forEach((word,normalizedFrequency)->{
-                stringBuilder.append(word);
-                stringBuilder.append(" ");
-                stringBuilder.append(normalizedFrequency);
-                stringBuilder.append("\n");
-            });
-
-         return stringBuilder.toString();
-
-    }*/
+        StringBuffer builder = new StringBuffer();
+        builder.append("Frequency is : ");
+        builder.append(getNormalisedTermFrequency());
+        builder.append("\n DocumentData is ");
+        builder.append(getDocumentProperties().toString());
+        return builder.toString();
+    }
 }

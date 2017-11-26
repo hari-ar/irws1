@@ -2,10 +2,11 @@ package hari.griffith.assignment2.objects;
 
 import java.util.ArrayList;
 
-public class TFIDFDocumentProperties {
+public class WordProperties {
     private ArrayList<Document> documentsList;
     private float idfValue;
-    private float tf;
+
+
 
     //private int numberOfTimesOccuredInDocuments ;
 
@@ -30,5 +31,15 @@ public class TFIDFDocumentProperties {
         return documentsList.size();
     }
 
+    @Override
+    public String toString() {
+        StringBuffer builder = new StringBuffer();
+        builder.append("idf value is : ");
+        builder.append(getIdfValue());
+        for (Document document:getDocumentsList()) {
+            builder.append(document);
+        }
+        return builder.toString();
+    }
 
 }
