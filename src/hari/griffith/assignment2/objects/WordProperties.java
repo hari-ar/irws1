@@ -1,10 +1,12 @@
 package hari.griffith.assignment2.objects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WordProperties {
     private ArrayList<Document> documentsList;
-    private float idfValue;
+    private double idfValue;
+
 
 
 
@@ -18,11 +20,11 @@ public class WordProperties {
         this.documentsList = documentsList;
     }
 
-    public float getIdfValue() {
+    public double getIdfValue() {
         return idfValue;
     }
 
-    public void setIdfValue(float idfValue) {
+    public void setIdfValue(double idfValue) {
         this.idfValue = idfValue;
     }
 

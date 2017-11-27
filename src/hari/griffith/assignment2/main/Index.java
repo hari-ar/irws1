@@ -1,5 +1,6 @@
 package hari.griffith.assignment2.main;
 
+import hari.griffith.assignment2.objects.IndexTable;
 import hari.griffith.assignment2.processor.Indexer;
 import hari.griffith.assignment2.utils.Utils;
 
@@ -16,7 +17,11 @@ public class Index {
         Indexer indexer = new Indexer();
         Utils utils = new Utils();
         try(Stream<Path> pathStream = Files.walk(Paths.get(path), FileVisitOption.FOLLOW_LINKS)){
-            pathStream.filter(utils.isValidTextFile()).forEach(filePath-> indexer.processFiles(filePath));
+            pathStream.filter(utils.isValidTextFile()).forEach((Path filePath) -> {
+                indexer.processFiles(filePath);
+            });
+            IndexTable indexTable = indexer.processMatrix();
+            System.out.println(indexTable.getMagnitudeOfTfids().keySet().size());
         } catch (IOException e) {
             e.printStackTrace();
         }

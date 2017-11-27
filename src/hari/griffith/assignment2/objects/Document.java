@@ -3,13 +3,13 @@ package hari.griffith.assignment2.objects;
 public class Document {
     private DocumentProperties documentProperties;
     private float normalisedTermFrequency;
-    private float tfIdf;
+    private double tfIdf;
 
-    public float getTfIdf() {
+    public double getTfIdf() {
         return tfIdf;
     }
 
-    public void setTfIdf(float tfIdf) {
+    public void setTfIdf(double tfIdf) {
         this.tfIdf = tfIdf;
     }
 
