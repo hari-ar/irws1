@@ -1,8 +1,4 @@
-package hari.griffith.assignment2.main;
-
-import hari.griffith.assignment2.objects.IndexTable;
-import hari.griffith.assignment2.processor.Indexer;
-import hari.griffith.assignment2.utils.Utils;
+package hari.griffith.assignment.part1;
 
 import java.io.IOException;
 import java.nio.file.FileVisitOption;
@@ -20,8 +16,7 @@ public class Index {
             pathStream.filter(utils.isValidTextFile()).forEach((Path filePath) -> {
                 indexer.processFiles(filePath);
             });
-            IndexTable indexTable = indexer.processMatrix();
-            System.out.println(indexTable.getMagnitudeOfTfids().keySet().size());
+            indexer.processMatrixAndSetTFIDFValues();
         } catch (IOException e) {
             e.printStackTrace();
         }

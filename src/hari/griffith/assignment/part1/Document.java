@@ -1,6 +1,8 @@
-package hari.griffith.assignment2.objects;
+package hari.griffith.assignment.part1;
 
-public class Document {
+import java.io.Serializable;
+
+public class Document implements Serializable{
     private DocumentProperties documentProperties;
     private float normalisedTermFrequency;
     private double tfIdf;
@@ -30,7 +32,7 @@ public class Document {
 
     }
 
-    @Override
+    /*@Override
     public String toString() {
         StringBuffer builder = new StringBuffer();
         builder.append("Frequency is : ");
@@ -38,5 +40,5 @@ public class Document {
         builder.append("\n DocumentData is ");
         builder.append(getDocumentProperties().toString());
         return builder.toString();
-    }
+    }*/
 }

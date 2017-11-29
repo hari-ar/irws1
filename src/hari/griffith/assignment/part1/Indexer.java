@@ -1,20 +1,20 @@
-package hari.griffith.assignment2.processor;
+package hari.griffith.assignment.part1;
 
-import hari.griffith.assignment2.constants.AppContstants;
-import hari.griffith.assignment2.objects.Document;
-import hari.griffith.assignment2.objects.DocumentProperties;
-import hari.griffith.assignment2.objects.IndexTable;
-import hari.griffith.assignment2.objects.WordProperties;
-import hari.griffith.assignment2.utils.Utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.regex.Matcher;
+
+import static hari.griffith.assignment.part1.AppConstants.*;
 
 
 public class Indexer {
@@ -23,7 +23,7 @@ public class Indexer {
     private Utils utils = new Utils();
     private int wordCountForGivenDoc =0;
     private int documentCount = 0;
-    private IndexTable indexTable;
+
 
     public void processFiles(Path filePath) {
         try(BufferedReader bufferedReader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)){
@@ -33,61 +33,64 @@ public class Indexer {
             DocumentProperties documentProperties = null;
             StringBuilder titleBuilder = new StringBuilder();
             StringBuilder dataBuilder = new StringBuilder();
+            HashSet<String> checkForDuplicateDocuments = new HashSet<>();
+            int documentNumber = documentCount;
             while ((line = bufferedReader.readLine())!=null){
 
                 if(line.trim().isEmpty()){ //End of title block
                     isTitle = false;
                 }
-                if(isTitle){ //Add title to buffer to process it later
+                if(isTitle){
                     titleBuilder.append(line);
                     titleBuilder.append(" ");
                 }
                 if(!isTitle && !isFirstLine ){
                     dataBuilder.append(line);
                     dataBuilder.append(" ");
-
                 }
-
                 if(isFirstLine){
-
-                    documentProperties = new DocumentProperties();
-                    documentProperties.setDocumentNumber(parseAndGetDocumentNumber(line));
+                    documentNumber = parseAndGetDocumentNumber(line);
                     isTitle = true;
                     isFirstLine = false;
                 }
                 if(line.startsWith("******") && line.endsWith("******")){
-                    documentCount++;
                     isTitle = false;
                     isFirstLine = true;
-                    documentProperties.setDocumentTitle(titleBuilder.toString());
+                    String title = titleBuilder.toString().trim();
+
+
+                    if(!checkForDuplicateDocuments.contains(documentNumber+title))
+                    {
+                        documentCount++;
+                        documentProperties = new DocumentProperties();
+                        documentProperties.setDocumentNumber(documentNumber);
+                        documentProperties.setDocumentTitle(title);
+                        dataBuilder.append(" ");
+                        dataBuilder.append(title);
+                        String documentData = dataBuilder.toString();
+                        checkForDuplicateDocuments.add(documentNumber+title);
+                        processCurrentDocument(documentProperties,documentData);
+                    }
+                    //Reset Buffers
                     titleBuilder.setLength(0);
-                    String documentData = dataBuilder.toString();
                     dataBuilder.setLength(0);
-                    processCurrentDocument(documentProperties,documentData);
                     //throw new IOException("test");
                 }
             }
+            System.out.println(documentCount);
         } catch (IOException e) { //Read Failure.
             e.printStackTrace();
         }
 
     }
 
-    /*private void printMap() {
-        tfidfMap.forEach((key,value)->{
-            value.getDocumentsList().forEach(item->{
-                String title = item.getDocumentProperties().getDocumentTitle();
-                System.out.println(title);
-            });
-        });
-    }*/
 
     private void processCurrentDocument(DocumentProperties documentProperties, String documentData) {
         final Document[] document = new Document[1];
-        HashMap<String,Float> wordsWithTermFrequencyMap = processTitle(documentProperties);
+        HashMap<String,Float> wordsWithTermFrequencyMap = processDocument(documentData);
         String[] processedDataArray = utils.removeSpecialCharecters(documentData.trim()).split("\\s+");
         for(String word:processedDataArray){
-            if (AppContstants.STOPWORDLIST.contains(word)) {
+            if (STOPWORDLIST.contains(word)) {
                 continue;
             }
             String key = utils.getStemmedWord(word);
@@ -101,16 +104,12 @@ public class Indexer {
         }
         documentProperties.setTotalNumberOfWords(wordCountForGivenDoc);
 
-        wordsWithTermFrequencyMap.forEach((key,termFrequency)->{
+        wordsWithTermFrequencyMap.forEach((String key, Float termFrequency) ->{
             document[0] = new Document();
             document[0].setDocumentProperties(documentProperties);
             document[0].setNormalisedTermFrequency(termFrequency/wordCountForGivenDoc);
             if(tfidfMap.containsKey(key)){
-                WordProperties wordProperties = tfidfMap.get(key);
-                ArrayList<Document> documentsList = wordProperties.getDocumentsList();
-                documentsList.add(document[0]);
-                wordProperties.setDocumentsList(documentsList);
-                tfidfMap.put(key,wordProperties);
+                tfidfMap.get(key).getDocumentsList().add(document[0]);
             }
             else{
                 WordProperties wordProperties = new WordProperties();
@@ -120,82 +119,87 @@ public class Indexer {
                 tfidfMap.put(key,wordProperties);
             }
         });
-        //System.out.println(documentProperties);
         wordCountForGivenDoc=  0;
-
     }
 
-    private HashMap<String,Float> processTitle(DocumentProperties documentProperties) {
-        String[] processedStringArray  = utils.removeSpecialCharecters(documentProperties.getDocumentTitle()).split("\\s+");
-        HashMap<String,Float> titleMap = new HashMap<>();
+
+    private HashMap<String,Float> processDocument(String data) {
+        String[] processedStringArray  = utils.removeSpecialCharecters(data).split("\\s+");
+        HashMap<String,Float> dataMap = new HashMap<>();
         for (String word:processedStringArray) {
-            if(!AppContstants.STOPWORDLIST.contains(word)){
+            if(STOPWORDLIST.contains(word)){
+                continue;
+            }
+            else{
                 String key = utils.getStemmedWord(word);
-                wordCountForGivenDoc+=2;
-                if(titleMap.containsKey(key)){
-                    titleMap.put(key,titleMap.get(key)+2);
+                wordCountForGivenDoc++;
+                if(dataMap.containsKey(key)){
+                    dataMap.put(key,dataMap.get(key)+1f);
                 }
                 else{
-                    titleMap.put(key,2f);
+                    dataMap.put(key,1f);
                 }
             }
         }
-        return titleMap;
+        return dataMap;
     }
-
 
 
 
 
 
     private  int parseAndGetDocumentNumber(String line) {
-        Matcher matcher = AppContstants.lastIntPattern.matcher(line);
+        Matcher matcher = lastIntPattern.matcher(line);
         if (matcher.find()) {
             String documentNumberInString = matcher.group(1);
             return Integer.parseInt(documentNumberInString);
         }
         else //Corner case if document number is missing ..!!
         {
-            return documentCount+1;
+            return (documentCount+1)*1000;
         }
     }
 
 
-    public IndexTable processMatrix() {
+    public void processMatrixAndSetTFIDFValues() throws IOException {
         int documentCount = this.documentCount;
         HashMap<Integer,ArrayList<Double>> magnitudeOfTfidfs = new HashMap<>();
         IndexTable indexTable = new IndexTable();
-        tfidfMap.forEach((key,value)->{
-            WordProperties newwordProperties = value;
-            System.out.println("Key is "+key);
+        BufferedWriter invertedIndexWriter = utils.getFileWriter("invertedIndex.txt");
+        BufferedWriter tfIdfMatrixWriter = utils.getFileWriter("tfIdf.txt");
+        DecimalFormat df = new DecimalFormat("#.0000");
+        invertedIndexWriter.write("Word,n_i,idf");
+        invertedIndexWriter.newLine();
+        tfIdfMatrixWriter.write("Word,IDF,TFIDF,Document Number, DocumentTitle");
+        tfIdfMatrixWriter.newLine();
 
+        tfidfMap.forEach((String key, WordProperties value) ->{
             double idfValue = Math.log( ((double) documentCount)/value.getDocumentsList().size());
-            System.out.println("idf  "+idfValue+" Which is "+documentCount+" / " + value.getDocumentsList().size());
 
-            newwordProperties.setIdfValue(idfValue); // Set IDF for each word
+            value.setIdfValue(idfValue); // Set IDF for each word
+            try {
+                invertedIndexWriter.write(key+","+value.getDocumentsList().size()+","+df.format(idfValue));
+                invertedIndexWriter.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //Processing for TF-IDF Values
             ArrayList<Document> documents = new ArrayList<>();
             value.getDocumentsList().forEach(((Document document) -> {
                 double tfidf = idfValue*document.getNormalisedTermFrequency();
                 document.setTfIdf(tfidf);
                 documents.add(document);
-                int documentNumber = document.getDocumentProperties().getDocumentNumber();
-                if(magnitudeOfTfidfs.containsKey(documentNumber)){
-                    ArrayList<Double> listOfTfIdfs = magnitudeOfTfidfs.get(documentNumber);
-                    listOfTfIdfs.add(tfidf);
-                    magnitudeOfTfidfs.put(documentNumber,listOfTfIdfs);
-                }
-                else {
-                    ArrayList<Double> listOfTfIdfs = new ArrayList<>();
-                    listOfTfIdfs.add(tfidf);
-                    magnitudeOfTfidfs.put(documentNumber,listOfTfIdfs);
+                try
+                {
+                    tfIdfMatrixWriter.write(key+delimiter+idfValue+delimiter+tfidf+delimiter+document.getDocumentProperties().getDocumentNumber()+delimiter+document.getDocumentProperties().getDocumentTitle()+delimiter);
+                    tfIdfMatrixWriter.newLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }));
-            newwordProperties.setDocumentsList(documents);
-            tfidfMap.put(key,newwordProperties);
+            value.setDocumentsList(documents);
         });
         indexTable.setTable(tfidfMap);
-        indexTable.setTotalNumberOfDocuments(documentCount);
-        indexTable.setMagnitudeOfTfids(magnitudeOfTfidfs);
-        return indexTable;
+        utils.closeWriter(invertedIndexWriter);
     }
 }

@@ -1,9 +1,12 @@
-package hari.griffith.assignment2.objects;
+package hari.griffith.assignment.part1;
 
-public class DocumentProperties {
+import java.io.Serializable;
+
+public class DocumentProperties implements Serializable{
     private String documentTitle;
     private int documentNumber;
     private int totalNumberOfWords;
+
 
     public String getDocumentTitle() {
         return documentTitle;
@@ -21,25 +24,19 @@ public class DocumentProperties {
         this.documentNumber = documentNumber;
     }
 
-    public int getTotalNumberOfWords() {
-        return totalNumberOfWords;
-    }
 
     public void setTotalNumberOfWords(int totalNumberOfWords) {
         this.totalNumberOfWords = totalNumberOfWords;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         StringBuffer builder = new StringBuffer();
-        builder.append("Name is : ");
         builder.append(getDocumentTitle());
-        builder.append(" ");
-        builder.append("Number is : ");
+        builder.append(",");
         builder.append(getDocumentNumber());
-        builder.append(" ");
-        builder.append("Number of words : ");
+        builder.append(",");
         builder.append(getTotalNumberOfWords());
         return builder.toString();
-    }
+    }*/
 }

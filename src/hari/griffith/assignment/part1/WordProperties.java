@@ -1,9 +1,9 @@
-package hari.griffith.assignment2.objects;
+package hari.griffith.assignment.part1;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class WordProperties {
+public class WordProperties implements Serializable {
     private ArrayList<Document> documentsList;
     private double idfValue;
 
@@ -33,8 +33,9 @@ public class WordProperties {
         return documentsList.size();
     }
 
-    @Override
-    public String toString() {
+   /*
+   *  @Override
+        public String toString() {
         StringBuffer builder = new StringBuffer();
         builder.append("idf value is : ");
         builder.append(getIdfValue());
@@ -42,6 +43,6 @@ public class WordProperties {
             builder.append(document);
         }
         return builder.toString();
-    }
+    }*/
 
 }

@@ -1,4 +1,4 @@
-package hari.griffith.assignment2.objects;
+package hari.griffith.assignment.part1;
 
 import java.util.ArrayList;
 import java.util.HashMap;
