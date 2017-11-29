@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 import static hari.griffith.assignment.part1.AppConstants.*;
 
 
-public class Indexer {
+ class Indexer {
 
     private HashMap<String,WordProperties> tfidfMap = new HashMap<>();
     private Utils utils = new Utils();
@@ -90,7 +90,7 @@ public class Indexer {
         HashMap<String,Float> wordsWithTermFrequencyMap = processDocument(documentData);
         String[] processedDataArray = utils.removeSpecialCharecters(documentData.trim()).split("\\s+");
         for(String word:processedDataArray){
-            if (STOPWORDLIST.contains(word)) {
+            if (STOP_WORDS_LIST.contains(word)) {
                 continue;
             }
             String key = utils.getStemmedWord(word);
@@ -127,7 +127,7 @@ public class Indexer {
         String[] processedStringArray  = utils.removeSpecialCharecters(data).split("\\s+");
         HashMap<String,Float> dataMap = new HashMap<>();
         for (String word:processedStringArray) {
-            if(STOPWORDLIST.contains(word)){
+            if(STOP_WORDS_LIST.contains(word)){
                 continue;
             }
             else{
@@ -149,7 +149,7 @@ public class Indexer {
 
 
     private  int parseAndGetDocumentNumber(String line) {
-        Matcher matcher = lastIntPattern.matcher(line);
+        Matcher matcher = LAST_INT_PATTERN.matcher(line);
         if (matcher.find()) {
             String documentNumberInString = matcher.group(1);
             return Integer.parseInt(documentNumberInString);
@@ -165,13 +165,13 @@ public class Indexer {
         int documentCount = this.documentCount;
         HashMap<Integer,ArrayList<Double>> magnitudeOfTfidfs = new HashMap<>();
         IndexTable indexTable = new IndexTable();
-        BufferedWriter invertedIndexWriter = utils.getFileWriter("invertedIndex.txt");
-        BufferedWriter tfIdfMatrixWriter = utils.getFileWriter("tfIdf.txt");
+        BufferedWriter invertedIndexWriter = utils.getFileWriter(INVERTED_INDEX_FILE_NAME);
+        BufferedWriter tfIdfMatrixWriter = utils.getFileWriter(TFIDF_OUTPUT_FILE);
         DecimalFormat df = new DecimalFormat("#.0000");
         invertedIndexWriter.write("Word,n_i,idf");
         invertedIndexWriter.newLine();
-        tfIdfMatrixWriter.write("Word,IDF,TFIDF,Document Number, DocumentTitle");
-        tfIdfMatrixWriter.newLine();
+        //tfIdfMatrixWriter.write("Word,IDF,TFIDF,Document Number, DocumentTitle");
+        //tfIdfMatrixWriter.newLine();
 
         tfidfMap.forEach((String key, WordProperties value) ->{
             double idfValue = Math.log( ((double) documentCount)/value.getDocumentsList().size());
@@ -191,7 +191,7 @@ public class Indexer {
                 documents.add(document);
                 try
                 {
-                    tfIdfMatrixWriter.write(key+delimiter+idfValue+delimiter+tfidf+delimiter+document.getDocumentProperties().getDocumentNumber()+delimiter+document.getDocumentProperties().getDocumentTitle()+delimiter);
+                    tfIdfMatrixWriter.write(key+ DELIMITER +idfValue+ DELIMITER +tfidf+ DELIMITER +document.getDocumentProperties().getDocumentNumber()+ DELIMITER +document.getDocumentProperties().getDocumentTitle()+ DELIMITER);
                     tfIdfMatrixWriter.newLine();
                 } catch (IOException e) {
                     e.printStackTrace();

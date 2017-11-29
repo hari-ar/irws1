@@ -3,7 +3,7 @@ package hari.griffith.assignment.part1;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class IndexTable {
+ class IndexTable {
     int totalNumberOfDocuments;
     HashMap<Integer,ArrayList<Double>> magnitudeOfTfids = new HashMap<>();
     HashMap<String,WordProperties> table;

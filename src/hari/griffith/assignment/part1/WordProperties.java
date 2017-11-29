@@ -3,7 +3,7 @@ package hari.griffith.assignment.part1;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class WordProperties implements Serializable {
+ class WordProperties implements Serializable {
     private ArrayList<Document> documentsList;
     private double idfValue;
 

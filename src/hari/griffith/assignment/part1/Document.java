@@ -2,7 +2,7 @@ package hari.griffith.assignment.part1;
 
 import java.io.Serializable;
 
-public class Document implements Serializable{
+ class Document implements Serializable{
     private DocumentProperties documentProperties;
     private float normalisedTermFrequency;
     private double tfIdf;

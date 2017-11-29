@@ -2,7 +2,7 @@ package hari.griffith.assignment.part1;
 
 import java.io.Serializable;
 
-public class DocumentProperties implements Serializable{
+ class DocumentProperties implements Serializable{
     private String documentTitle;
     private int documentNumber;
     private int totalNumberOfWords;

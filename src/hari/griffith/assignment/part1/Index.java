@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-public class Index {
+ class Index {
     public static void main(String[] args) {
         String path = args[0];
         Indexer indexer = new Indexer();

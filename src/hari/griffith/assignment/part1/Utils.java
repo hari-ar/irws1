@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 import static hari.griffith.assignment.part1.AppConstants.*;
 
-public class Utils {
+ class Utils {
     public static Predicate<Path> isValidTextFile() {
         return p -> !p.toFile().isDirectory() && p.toFile().getAbsolutePath().endsWith("txt");
     }
@@ -28,11 +28,11 @@ public class Utils {
 
     public BufferedWriter getFileWriter(String fileName) throws IOException {
 
-        Path path = Paths.get(outputDirectory);
+        Path path = Paths.get(OUTPUT_DIRECTORY);
         if (!Files.exists(path)) {
                 Files.createDirectories(path);
         }
-        path = Paths.get(outputDirectory+"/"+fileName);
+        path = Paths.get(OUTPUT_DIRECTORY +"/"+fileName);
         if (!Files.exists(path)) {
             Files.createFile(path);
         }
