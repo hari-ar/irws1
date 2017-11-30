@@ -1,5 +1,6 @@
 package hari.griffith.assignment.part2;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,6 +21,7 @@ class QueryProcessor {
      void processQuery(IndexData indexData, QueryObject queryObject) {
         Utils utils = Utils.getUtilsInstance();
         HashMap<String,Double> queryVector = new HashMap<>();
+         DecimalFormat df = new DecimalFormat("0.000000"); //Format for just printing not storing.
          double magnitudeSquare = 0;
         String[] queryArray = utils.removeSpecialCharecters(queryObject.getQueryText().trim()).split("\\s+");
         HashMap<String, Double> sumProductValuesForEachDoc = new HashMap<>();
@@ -72,7 +74,8 @@ class QueryProcessor {
          //Calculate and print the score
          sumProductValuesForEachDoc.forEach((String key, Double value) ->{
                double cosineScore = value / (Math.sqrt(finalMagnitudeSquare *indexData.getDocumentMagnitudeMap().get(key)));
-               utils.writeToFile(queryObject.getQueryText()+DELIMITER+key+DELIMITER+cosineScore);
+
+               utils.writeToFile(queryObject.getQueryNumber()+DELIMITER+df.format(cosineScore)+DELIMITER+key);
 
 
         });

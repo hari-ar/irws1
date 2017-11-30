@@ -10,6 +10,11 @@ package hari.griffith.assignment.part2;
 public class QueryObject {
 
     String queryText;
+
+    public int getQueryNumber() {
+        return queryNumber;
+    }
+
     int queryNumber;
 
     public String getQueryText() {

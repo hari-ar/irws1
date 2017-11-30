@@ -30,7 +30,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
     private int documentCount = 0;
 
     // Method responsible for reading data from file and create inverted Index matrix and term frequencies for each file.
-    public void processFiles(Path filePath) {
+     void processFiles(Path filePath) {
         //Read the file path
         try(BufferedReader bufferedReader = Files.newBufferedReader(filePath, StandardCharsets.UTF_8)){
             String line; //Stores the current line info.
@@ -40,7 +40,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
             boolean isTitle = false;
 
             //Other Objects
-            DocumentProperties documentProperties = null;
+            DocumentProperties documentProperties;
             StringBuilder titleBuilder = new StringBuilder();
             StringBuilder dataBuilder = new StringBuilder();
             int documentNumber = documentCount;
@@ -76,21 +76,23 @@ import static hari.griffith.assignment.part1.AppConstants.*;
                     isFirstLine = true;
                     String title = titleBuilder.toString().trim();
                     //Additional check to avoid duplicate documents.
-                    if(!checkForDuplicateDocuments.contains(documentNumber+title))
-                    {
-                        documentCount++;
-                        //Set document title number in DocumentProperties class
-                        documentProperties = new DocumentProperties();
-                        documentProperties.setDocumentNumber(documentNumber);
-                        documentProperties.setDocumentTitle(title);
-                        dataBuilder.append(" ");
-                        //Add title to data., No special treatment for title for now..!!
-                        dataBuilder.append(title);
-                        String documentData = dataBuilder.toString();
-                        //Add to set which checks for duplicates..
-                        checkForDuplicateDocuments.add(documentNumber+title);
-                        //Process the document and build n_i, tf tables.
-                        processCurrentDocument(documentProperties,documentData);
+                    if(!(titleBuilder.toString().trim().length()==0 || dataBuilder.toString().trim().length()==0)){
+                        if(!checkForDuplicateDocuments.contains(documentNumber+title))
+                        {
+                            documentCount++;
+                            //Set document title number in DocumentProperties class
+                            documentProperties = new DocumentProperties();
+                            documentProperties.setDocumentNumber(documentNumber);
+                            documentProperties.setDocumentTitle(title);
+                            dataBuilder.append(" ");
+                            //Add title to data., No special treatment for title for now..!!
+                            dataBuilder.append(title);
+                            String documentData = dataBuilder.toString();
+                            //Add to set which checks for duplicates..
+                            checkForDuplicateDocuments.add(documentNumber+title);
+                            //Process the document and build n_i, tf tables.
+                            processCurrentDocument(documentProperties,documentData);
+                        }
                     }
 
                     //Reset string builders
@@ -146,10 +148,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
         HashMap<String,Float> dataMap = new HashMap<>();
 
         for (String word:processedStringArray) {
-            if(STOP_WORDS_LIST.contains(word)){ //Ignore stop words
-                continue;
-            }
-            else{
+            if (!STOP_WORDS_LIST.contains(word)) {
                 String key = utils.getStemmedWord(word); //Get stemmed word
                 wordCountForGivenDoc++;
                 if(dataMap.containsKey(key)){ //Check if word already exists in matrix
@@ -179,7 +178,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
 
 
     //Method where TF-IDF is calculated. This should be called after all the documents are read.
-    public void processMatrixAndSetTFIDFValues() throws IOException {
+    void processMatrixAndSetTFIDFValues() throws IOException {
         final int documentCount = this.documentCount; //temp variable hold document count
         BufferedWriter invertedIndexWriter = utils.getFileWriter(INVERTED_INDEX_FILE_NAME);
         BufferedWriter tfIdfMatrixWriter = utils.getFileWriter(TFIDF_OUTPUT_FILE);

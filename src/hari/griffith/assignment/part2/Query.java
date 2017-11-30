@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import static hari.griffith.assignment.part2.AppConstants.DELIMITER;
+
 /**
  *
  * Main Class for Query Processing
@@ -20,6 +22,9 @@ class Query {
     public static void main(String[] args) {
         PreQueryProcessor preQueryProcessor = new PreQueryProcessor();
         QueryProcessor queryProcessor = new QueryProcessor();
+        Utils utils = Utils.getUtilsInstance();
+
+        utils.writeToFile("Query Number"+DELIMITER+"Cosine Similarity Score"+DELIMITER+"Document Number"+DELIMITER+"Document Title");
 
         //Read from index data generated in indexing part.
         IndexData indexData = preQueryProcessor.preProcess();
@@ -67,7 +72,7 @@ class Query {
         }
 
         //Close file resources
-        Utils utils = Utils.getUtilsInstance();
+
         utils.closeWriter();
     }
 
