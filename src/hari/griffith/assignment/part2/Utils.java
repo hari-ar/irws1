@@ -20,7 +20,7 @@ import static hari.griffith.assignment.part2.AppConstants.OUTPUT_DIRECTORY;
 
 class Utils {
 
-    BufferedWriter fileWriter;
+    BufferedWriter fileWriter,rankedFileWriter;
     private static Utils utilsInstance = null;
     private Utils(){}
 
@@ -44,11 +44,19 @@ class Utils {
    }
 
     ///Common method to close buffered writer.
-   public void closeWriter () {
+   public void closeWriters() {
        if(fileWriter!=null)
        {
            try {
                fileWriter.close();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+       if(rankedFileWriter!=null)
+       {
+           try {
+               rankedFileWriter.close();
            } catch (IOException e) {
                e.printStackTrace();
            }
@@ -73,11 +81,30 @@ class Utils {
         }
     }
 
+
+    //Sets filewriter instance with given file name.
+    private void setRankedFileWriter(String fileName)  {
+        Path path = Paths.get(OUTPUT_DIRECTORY);
+        try{
+            if (!Files.exists(path)) {
+                Files.createDirectories(path);
+            }
+            path = Paths.get(OUTPUT_DIRECTORY +"/"+fileName);
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+            }
+            this.rankedFileWriter = Files.newBufferedWriter(path);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
     //Method to write into file. Uses the created writer.
     public void writeToFile( String data){
        if(fileWriter==null)
        {
-           setFileWriter(AppConstants.QUERY_FILE_NAME);
+           setFileWriter(AppConstants.QUERY_OUTPUT_FILE_NAME);
        }
        try {
             fileWriter.write(data);
@@ -86,4 +113,17 @@ class Utils {
             e.printStackTrace();
         }
     }
+    public void writeToRankedFile( String data){
+        if(rankedFileWriter==null)
+        {
+            setRankedFileWriter(AppConstants.RANKED_QUERY_FILE_NAME);
+        }
+        try {
+            rankedFileWriter.write(data);
+            rankedFileWriter.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

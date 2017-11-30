@@ -17,5 +17,6 @@ interface AppConstants {
    String INPUT_FILE_NAME = WORKING_DIRECTORY +"/output/tfIdf.txt";
    String OUTPUT_DIRECTORY = WORKING_DIRECTORY +"/output/";
    String DELIMITER = "\t";
-    String QUERY_FILE_NAME = "QueryResults.txt";
+    String QUERY_OUTPUT_FILE_NAME = "QueryResults.txt";
+    String RANKED_QUERY_FILE_NAME = "Top_10_Documents.txt";
 }

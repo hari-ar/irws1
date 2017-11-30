@@ -73,7 +73,7 @@ class Query {
 
         //Close file resources
 
-        utils.closeWriter();
+        utils.closeWriters();
     }
 
 }

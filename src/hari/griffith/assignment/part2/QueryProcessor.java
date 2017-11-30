@@ -3,6 +3,7 @@ package hari.griffith.assignment.part2;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeSet;
 
 import static hari.griffith.assignment.part2.AppConstants.DELIMITER;
 import static hari.griffith.assignment.part2.AppConstants.STOP_WORDS_LIST;
@@ -18,13 +19,17 @@ import static hari.griffith.assignment.part2.AppConstants.STOP_WORDS_LIST;
 
 class QueryProcessor {
 
+
+
      void processQuery(IndexData indexData, QueryObject queryObject) {
-        Utils utils = Utils.getUtilsInstance();
-        HashMap<String,Double> queryVector = new HashMap<>();
+
+         TreeSet<QueryResultObject> set = new TreeSet<>();
+         Utils utils = Utils.getUtilsInstance();
+         HashMap<String,Double> queryVector = new HashMap<>();
          DecimalFormat df = new DecimalFormat("0.000000"); //Format for just printing not storing.
          double magnitudeSquare = 0;
-        String[] queryArray = utils.removeSpecialCharecters(queryObject.getQueryText().trim()).split("\\s+");
-        HashMap<String, Double> sumProductValuesForEachDoc = new HashMap<>();
+         String[] queryArray = utils.removeSpecialCharecters(queryObject.getQueryText().trim()).split("\\s+");
+         HashMap<String, Double> sumProductValuesForEachDoc = new HashMap<>();
 
 
         //Step similar to processing the word
@@ -70,14 +75,20 @@ class QueryProcessor {
          {
                  utils.writeToFile(queryObject.getQueryText()+DELIMITER+"No matching Documents..!!");
          }
-
-         //Calculate and print the score
+         //Calculate scores and put it in a set., which will be sorted.
          sumProductValuesForEachDoc.forEach((String key, Double value) ->{
                double cosineScore = value / (Math.sqrt(finalMagnitudeSquare *indexData.getDocumentMagnitudeMap().get(key)));
-
-               utils.writeToFile(queryObject.getQueryNumber()+DELIMITER+df.format(cosineScore)+DELIMITER+key);
-
-
+               set.add(new QueryResultObject(cosineScore,key));
         });
+         final int[] i = {0};
+
+         //Print the scores
+         set.forEach(value-> {
+             utils.writeToFile(queryObject.getQueryNumber()+DELIMITER+df.format(value.getScore())+DELIMITER+value.getDocumentIdentifier());
+             i[0]++;
+             if(i[0] < 11){
+                 utils.writeToRankedFile(queryObject.getQueryNumber()+DELIMITER+df.format(value.getScore())+DELIMITER+value.getDocumentIdentifier());
+             }
+         });
     }
 }
