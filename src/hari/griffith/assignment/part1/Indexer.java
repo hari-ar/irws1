@@ -58,8 +58,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
                     isFirstLine = true;
                     String title = titleBuilder.toString().trim();
 
-
-                    if(!checkForDuplicateDocuments.contains(documentNumber+title))
+                if(!checkForDuplicateDocuments.contains(documentNumber+title))
                     {
                         documentCount++;
                         documentProperties = new DocumentProperties();
@@ -77,6 +76,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
                     //throw new IOException("test");
                 }
             }
+
             System.out.println(documentCount);
         } catch (IOException e) { //Read Failure.
             e.printStackTrace();
@@ -87,21 +87,21 @@ import static hari.griffith.assignment.part1.AppConstants.*;
 
     private void processCurrentDocument(DocumentProperties documentProperties, String documentData) {
         final Document[] document = new Document[1];
+        wordCountForGivenDoc = 0;
         HashMap<String,Float> wordsWithTermFrequencyMap = processDocument(documentData);
-        String[] processedDataArray = utils.removeSpecialCharecters(documentData.trim()).split("\\s+");
+        /*String[] processedDataArray = utils.removeSpecialCharecters(documentData.trim()).split("\\s+");
         for(String word:processedDataArray){
             if (STOP_WORDS_LIST.contains(word)) {
                 continue;
             }
             String key = utils.getStemmedWord(word);
-            wordCountForGivenDoc++;
             if(wordsWithTermFrequencyMap.containsKey(key)){
                 wordsWithTermFrequencyMap.put(key,wordsWithTermFrequencyMap.get(key)+1);
             }
             else{
                 wordsWithTermFrequencyMap.put(key,1f);
             }
-        }
+        }*/
         documentProperties.setTotalNumberOfWords(wordCountForGivenDoc);
 
         wordsWithTermFrequencyMap.forEach((String key, Float termFrequency) ->{
@@ -174,7 +174,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
         //tfIdfMatrixWriter.newLine();
 
         tfidfMap.forEach((String key, WordProperties value) ->{
-            double idfValue = Math.log( ((double) documentCount)/value.getDocumentsList().size());
+            double idfValue = Math.log10( ((double) documentCount)/value.getDocumentsList().size());
 
             value.setIdfValue(idfValue); // Set IDF for each word
             try {
@@ -192,6 +192,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
                 try
                 {
                     tfIdfMatrixWriter.write(key+ DELIMITER +idfValue+ DELIMITER +tfidf+ DELIMITER +document.getDocumentProperties().getDocumentNumber()+ DELIMITER +document.getDocumentProperties().getDocumentTitle()+ DELIMITER);
+                    //System.out.println(key+ DELIMITER +idfValue+ DELIMITER +tfidf+ DELIMITER +document.getDocumentProperties().getDocumentNumber()+ DELIMITER +document.getDocumentProperties().getDocumentTitle()+ DELIMITER);
                     tfIdfMatrixWriter.newLine();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -201,5 +202,6 @@ import static hari.griffith.assignment.part1.AppConstants.*;
         });
         indexTable.setTable(tfidfMap);
         utils.closeWriter(invertedIndexWriter);
+        utils.closeWriter(tfIdfMatrixWriter);
     }
 }

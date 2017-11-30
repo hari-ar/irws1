@@ -16,8 +16,7 @@ import static hari.griffith.assignment.part2.AppConstants.STOP_WORDS_LIST;
          double magnitudeSquare = 0;
         String[] queryArray = utils.removeSpecialCharecters(queryObject.getQueryText().trim()).split("\\s+");
         HashMap<String, Double> sumProductValuesForEachDoc = new HashMap<>();
-
-
+         
         for (String word : queryArray) {
             if (!STOP_WORDS_LIST.contains(word)) {
                 String key = utils.getStemmedWord(word);
@@ -63,7 +62,6 @@ import static hari.griffith.assignment.part2.AppConstants.STOP_WORDS_LIST;
             }
 
         });
-         //utils.closeWriter(fileWriter);
-
+         utils.closeWriter(fileWriter);
     }
 }
