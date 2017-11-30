@@ -1,5 +1,12 @@
 package hari.griffith.assignment.part2;
 
+/***
+ * Holds Query information.
+ * Used to pass between methods,
+ * just to avoid multiple parameters for the method.
+ *
+ * ***/
+
 public class QueryObject {
 
     String queryText;
@@ -11,10 +18,6 @@ public class QueryObject {
 
     public void setQueryText(String queryText) {
         this.queryText = queryText;
-    }
-
-    public int getQueryNumber() {
-        return queryNumber;
     }
 
     public void setQueryNumber(int queryNumber) {

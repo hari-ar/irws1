@@ -3,7 +3,16 @@ package hari.griffith.assignment.part1;
 import java.io.Serializable;
 import java.util.ArrayList;
 
- class WordProperties implements Serializable {
+/**
+ *
+ * The POJO class which hold all the data related to a search term
+ * Have a list of Documents
+ * And idf values.
+ *
+ **/
+
+
+class WordProperties implements Serializable {
     private ArrayList<Document> documentsList;
     private double idfValue;
 

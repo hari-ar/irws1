@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="881854ab-e6f1-416f-9f28-799ed927c5fa" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/IndexTable.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Document.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Document.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Utils.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/WordProperties.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part1/WordProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java" afterPath="$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +34,55 @@
       <file leaf-file-name="Query.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="696">
+              <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreQueryProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9">
+              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordProperties.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding>
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#379#380#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Document.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1050">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,8 +93,8 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="204">
+              <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,54 +102,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryProcessor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java">
+      <file leaf-file-name="Stemmer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Stemmer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="451">
+              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2708#2709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java">
+      <file leaf-file-name="QueryObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="199" column="16" lean-forward="true" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="16" />
+            <state relative-caret-position="210">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding>
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConstants.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java">
+      <file leaf-file-name="IndexData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocumentProperties.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Index.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="206">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,26 +182,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/IndexTable.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/DocumentProperties.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessing.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Stemmer.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Document.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Utils.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/WordProperties.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Document.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/DocumentProperties.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessing.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Stemmer.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java" />
-        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java" />
         <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java" />
+        <option value="$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java" />
       </list>
     </option>
   </component>
@@ -243,7 +300,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Query">
+  <component name="RunManager" selected="Application.Index">
     <configuration name="Index" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -369,8 +426,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Query" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Index" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Index" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Query" />
       </list>
     </recent_temporary>
   </component>
@@ -388,15 +445,15 @@
       <option name="presentableId" value="Default" />
       <updated>1511922466273</updated>
       <workItem from="1511922467827" duration="12258000" />
-      <workItem from="1511962036180" duration="8261000" />
+      <workItem from="1511962036180" duration="18027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20519000" />
+    <option name="totallyTimeSpent" value="30285000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="827" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -407,7 +464,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -436,26 +493,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager />
@@ -486,7 +523,8 @@
         <state relative-caret-position="255">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -496,7 +534,8 @@
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -505,9 +544,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#180#181#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -565,64 +602,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/WordProperties.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/DocumentProperties.java" />
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="28" />
+        <state relative-caret-position="300">
+          <caret line="27" column="60" lean-forward="false" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="189" column="67" lean-forward="true" selection-start-line="189" selection-start-column="67" selection-end-line="189" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="25" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/DocumentProperties.java" />
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+        <state relative-caret-position="75">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="12" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="32">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Stemmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7560">
+          <caret line="514" column="20" lean-forward="true" selection-start-line="514" selection-start-column="20" selection-end-line="514" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/WordProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
-            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="78" column="8" lean-forward="true" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
           <folding>
-            <element signature="e#296#297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#390#391#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Stemmer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
+        <state relative-caret-position="451">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
             <element signature="e#2708#2709#0" expanded="true" />
@@ -630,20 +709,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/WordProperties.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="1050">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="210">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -652,82 +742,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/PreQueryProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="92" lean-forward="true" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
+        <state relative-caret-position="9">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/DocumentProperties.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/IndexData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Stemmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="511" column="0" lean-forward="false" selection-start-line="511" selection-start-column="0" selection-end-line="511" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="e#7270#7271#0" expanded="false" />
-            <element signature="e#7328#7329#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Document.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Index.java">
+    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/AppConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/AppConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part1/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="199" column="16" lean-forward="true" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/Query.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hari/griffith/assignment/part2/QueryProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

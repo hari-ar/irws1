@@ -1,26 +1,32 @@
 package hari.griffith.assignment.part2;
 
-import hari.griffith.assignment.part2.Document;
-
 import java.util.ArrayList;
+
+/**
+ *
+ * The POJO class which hold all the data related to a search term
+ * Have a list of Documents
+ * And idf values.
+ *
+ **/
 
 class WordProperties {
     private ArrayList<Document> documentsList;
     private double idfValue;
 
-    public ArrayList<Document> getDocumentsList() {
+    ArrayList<Document> getDocumentsList() {
         return documentsList;
     }
 
-    public void setDocumentsList(ArrayList<Document> documentsList) {
+    void setDocumentsList(ArrayList<Document> documentsList) {
         this.documentsList = documentsList;
     }
 
-    public double getIdfValue() {
+    double getIdfValue() {
         return idfValue;
     }
 
-    public void setIdfValue(double idfValue) {
+    void setIdfValue(double idfValue) {
         this.idfValue = idfValue;
     }
 }

@@ -5,19 +5,37 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.function.Predicate;
 
 import static hari.griffith.assignment.part2.AppConstants.OUTPUT_DIRECTORY;
 
-class Utils {
-   public static Predicate<Path> isValidTextFile() {
-       return p -> !p.toFile().isDirectory() && p.toFile().getAbsolutePath().endsWith("txt");
-   }
+/**
+ *
+ *
+ * Singleton utils class. This is done to avoid each query
+ * overwriting the results in file and one point access to io
+ * and closing buffer also becomes simpler.
+ *
+ * **/
 
+
+class Utils {
+
+    BufferedWriter fileWriter;
+    private static Utils utilsInstance = null;
+    private Utils(){}
+
+    public static Utils getUtilsInstance(){
+        if(utilsInstance==null){
+            utilsInstance = new Utils();
+        }
+        return utilsInstance;
+    }
+
+    ///Similar to part 1
    public String removeSpecialCharecters(String input){
        return input.replaceAll("[-]", " ").replaceAll("[^a-zA-Z0-9\\s]", "").toLowerCase();
    }
-
+    ///Similar to part 1
    public String getStemmedWord(String word){
        Stemmer stemmer =new Stemmer();
        stemmer.add(word.toCharArray(),word.length());
@@ -25,29 +43,47 @@ class Utils {
        return stemmer.toString();
    }
 
-
-   public BufferedWriter getFileWriter(String fileName) throws IOException {
-
-       Path path = Paths.get(OUTPUT_DIRECTORY);
-       if (!Files.exists(path)) {
-               Files.createDirectories(path);
-       }
-       path = Paths.get(OUTPUT_DIRECTORY +"/"+fileName);
-       if (!Files.exists(path)) {
-           Files.createFile(path);
-       }
-       BufferedWriter writer = Files.newBufferedWriter(path);
-       return writer;
-   }
-
-   public void closeWriter (BufferedWriter writer) {
-       if(writer!=null)
+    ///Common method to close buffered writer.
+   public void closeWriter () {
+       if(fileWriter!=null)
        {
            try {
-               writer.close();
+               fileWriter.close();
            } catch (IOException e) {
                e.printStackTrace();
            }
        }
    }
+
+   //Sets filewriter instance with given file name.
+    private void setFileWriter(String fileName)  {
+        Path path = Paths.get(OUTPUT_DIRECTORY);
+        try{
+            if (!Files.exists(path)) {
+                Files.createDirectories(path);
+            }
+            path = Paths.get(OUTPUT_DIRECTORY +"/"+fileName);
+            if (!Files.exists(path)) {
+                Files.createFile(path);
+            }
+            this.fileWriter = Files.newBufferedWriter(path);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    //Method to write into file. Uses the created writer.
+    public void writeToFile( String data){
+       if(fileWriter==null)
+       {
+           setFileWriter(AppConstants.QUERY_FILE_NAME);
+       }
+       try {
+            fileWriter.write(data);
+            fileWriter.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

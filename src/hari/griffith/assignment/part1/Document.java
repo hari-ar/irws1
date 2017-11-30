@@ -2,6 +2,13 @@ package hari.griffith.assignment.part1;
 
 import java.io.Serializable;
 
+/**
+ *
+ * This class Holds Document related info like tf-idf, normalised term frequency etc
+ * List of this object is stored to build the tfidf matrix
+ *
+ * **/
+
  class Document implements Serializable{
     private DocumentProperties documentProperties;
     private float normalisedTermFrequency;
@@ -32,7 +39,7 @@ import java.io.Serializable;
 
     }
 
-    /*@Override
+    /*@Override //Used for testing.
     public String toString() {
         StringBuffer builder = new StringBuffer();
         builder.append("Frequency is : ");

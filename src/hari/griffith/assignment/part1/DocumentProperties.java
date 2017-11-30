@@ -2,34 +2,41 @@ package hari.griffith.assignment.part1;
 
 import java.io.Serializable;
 
- class DocumentProperties implements Serializable{
+/**
+ *
+ * This class holds the document title, number
+ *
+ * This is created to avoid storing multiple strings of same info when one object can do., this helps in saving space.
+ *
+ * As only one instance per document is created. instead of terms * documents.
+ *
+ * **/
+
+
+class DocumentProperties implements Serializable{
     private String documentTitle;
     private int documentNumber;
-    private int totalNumberOfWords;
 
-
-    public String getDocumentTitle() {
+     String getDocumentTitle() {
         return documentTitle;
     }
 
-    public void setDocumentTitle(String documentTitle) {
+     void setDocumentTitle(String documentTitle) {
         this.documentTitle = documentTitle;
     }
 
-    public int getDocumentNumber() {
+    int getDocumentNumber() {
         return documentNumber;
     }
 
-    public void setDocumentNumber(int documentNumber) {
+     void setDocumentNumber(int documentNumber) {
         this.documentNumber = documentNumber;
     }
 
 
-    public void setTotalNumberOfWords(int totalNumberOfWords) {
-        this.totalNumberOfWords = totalNumberOfWords;
-    }
 
-   /* @Override
+
+   /* @Override //Used this for testing.
     public String toString() {
         StringBuffer builder = new StringBuffer();
         builder.append(getDocumentTitle());
