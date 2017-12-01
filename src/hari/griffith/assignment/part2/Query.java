@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 import static hari.griffith.assignment.part2.AppConstants.DELIMITER;
+import static hari.griffith.assignment.part2.AppConstants.OUTPUT_DIRECTORY;
 
 /**
  *
@@ -30,10 +31,11 @@ class Query {
         IndexData indexData = preQueryProcessor.preProcess();
         String path = args[0];
         StringBuilder queryBuilder = new StringBuilder();
-        boolean isFirst = true;
 
         //Read List of Queries
         final QueryObject[] query = {null};
+
+        System.out.println("Reading queries from : "+path);
 
         //Read the file
         try(Stream<String> pathStream = Files.lines(Paths.get(path))){
@@ -54,7 +56,7 @@ class Query {
                     isQueryNumber = true;
                     queryBuilder.append(line.substring(0,line.length()-2));
                     query[0].setQueryText(queryBuilder.toString());
-
+                    System.out.println("Processing Query Number"+query[0].getQueryNumber());
                     //Process the current Query
                     queryProcessor.processQuery(indexData,query[0]);
                     queryBuilder.setLength(0);
@@ -66,6 +68,9 @@ class Query {
                     queryBuilder.append(" ");
                 }
             });
+
+            System.out.println("All done.. Please check outputs at "+OUTPUT_DIRECTORY);
+
         }
         catch (IOException e){
             e.printStackTrace();

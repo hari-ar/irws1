@@ -101,7 +101,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
                 }
             }
             //Debug .. can be commented
-            System.out.println(documentCount);
+            //System.out.println(documentCount);
         } catch (IOException e) { //Read Failure.
             e.printStackTrace();
         }
@@ -185,7 +185,6 @@ import static hari.griffith.assignment.part1.AppConstants.*;
         DecimalFormat df = new DecimalFormat("#.0000"); //Format for just printing not storing.
         invertedIndexWriter.write("Word,n_i,idf"); //Header in csv
         invertedIndexWriter.newLine();
-
         //For each entry in the occurance matrix, calculate tfidf.,
         // which calculated tf-idf for all the search terms and store in map.
         // This is not required but built just that if

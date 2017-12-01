@@ -17,6 +17,8 @@ public class QueryObject {
 
     int queryNumber;
 
+
+
     public String getQueryText() {
         return queryText;
     }

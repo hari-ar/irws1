@@ -20,7 +20,7 @@ import static hari.griffith.assignment.part1.AppConstants.*;
 
      //A predicate to check if given file is a text file / ends with extension txt
     public static Predicate<Path> isValidTextFile() {
-        return p -> !p.toFile().isDirectory() && p.toFile().getAbsolutePath().endsWith("txt");
+        return p -> !p.toFile().isDirectory() && p.toFile().getAbsolutePath().endsWith("txt"); // Uncomment this line to read out only text files
     }
 
     //Returns string by removing all the special charecters except hyphen which is converted to space and space itself..!
